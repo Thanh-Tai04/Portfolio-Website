@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio của Nguyễn Thành Tài - Front-end Developer, sinh viên CNTT Đại học Nam Cần Thơ">
+    <meta name="keywords" content="front-end, developer, HTML, CSS, JavaScript, portfolio, Nguyễn Thành Tài">
+    <meta name="author" content="Nguyễn Thành Tài">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Nguyễn Thành Tài - Front-end Developer">
+    <meta property="og:description" content="Portfolio của Front-end Developer - Sinh viên CNTT">
+    <meta property="og:type" content="website">
+    
+    <title>Nguyễn Thành Tài - Front-end Developer | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- ===========================
+         NAVIGATION
+    =========================== -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="#hero" class="logo">
+                    <span class="logo-text">NTT</span>
+                </a>
+                
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#hero" class="nav-link">Trang chủ</a></li>
+                    <li><a href="#about" class="nav-link">Giới thiệu</a></li>
+                    <li><a href="#education" class="nav-link">Học vấn</a></li>
+                    <li><a href="#skills" class="nav-link">Kỹ năng</a></li>
+                    <li><a href="#projects" class="nav-link">Dự án</a></li>
+                    <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===========================
+         HERO SECTION
+    =========================== -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-greeting">Xin chào, tôi là</p>
+                    <h1 class="hero-title">Nguyễn Thành Tài</h1>
+                    <p class="hero-subtitle">Front-end Developer</p>
+                    <p class="hero-description">Sinh viên CNTT | Đam mê phát triển web</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="https://www.topcv.vn/xem-cv/UwwBDQgAUwZTA1lUAlBWVQNSAlBSXldTDlBeWwcd97" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="btn btn-primary">
+                            <i class="fas fa-file-alt"></i> Xem CV
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Liên hệ
+                        </a>
+                    </div>
+                    
+                    <div class="hero-social">
+                        <a href="mailto:tainguyen280404@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:038937115" class="social-link" aria-label="Phone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <a href="https://docs.google.com/document/d/1Uwqw2OqjJMaSjzvC_hB99ofk6HsjHLpG7jMyYXhxRxc/edit?usp=sharing" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="social-link" 
+                           aria-label="Đơn xin thực tập">
+                            <i class="fas fa-file-contract"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <a href="#about" aria-label="Scroll down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===========================
+         ABOUT SECTION
+    =========================== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Giới thiệu</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3 class="about-subtitle">Chào mừng đến với portfolio của tôi!</h3>
+                    
+                    <p class="about-description">
+                        Tôi là <strong>Nguyễn Thành Tài</strong>, sinh viên năm 4 ngành Công nghệ thông tin 
+                        tại Trường Đại học Nam Cần Thơ với xếp loại <strong>Giỏi</strong>. Tôi có niềm đam mê 
+                        mãnh liệt với phát triển web, đặc biệt là Front-end Development.
+                    </p>
+                    
+                    <div class="about-goals">
+                        <div class="goal-item">
+                            <div class="goal-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="goal-content">
+                                <h4>Mục tiêu ngắn hạn</h4>
+                                <p>
+                                    Làm việc tại các công ty công nghệ hàng đầu Việt Nam như Viettel, FPT Software, 
+                                    VNPT với mức lương 8-12 triệu/tháng, nơi tôi có thể áp dụng kiến thức và 
+                                    phát triển kỹ năng chuyên môn.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="goal-item">
+                            <div class="goal-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="goal-content">
+                                <h4>Mục tiêu dài hạn</h4>
+                                <p>
+                                    Trong 5-10 năm tới, tôi hướng tới vị trí <strong>Front-end Team Lead</strong> 
+                                    với mức lương 30-50 triệu/tháng, đồng thời không ngừng học hỏi và cập nhật 
+                                    các công nghệ mới nhất.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-experience">
+                        <h4><i class="fas fa-briefcase"></i> Kinh nghiệm làm việc</h4>
+                        <div class="experience-item">
+                            <div class="experience-header">
+                                <strong>Nhân viên phục vụ và pha chế</strong> - Lentil Coffee
+                            </div>
+                            <div class="experience-date">12/2022 - 08/2023</div>
+                            <p class="experience-description">
+                                Phục vụ khách hàng chuyên nghiệp, pha chế đồ uống theo tiêu chuẩn, 
+                                quản lý nguyên liệu và giải quyết khiếu nại. Công việc này giúp tôi 
+                                rèn luyện kỹ năng giao tiếp, làm việc nhóm và xử lý tình huống.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         EDUCATION SECTION
+    =========================== -->
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Học vấn</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-animate="fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="card-header">
+                                <h3>Trường Đại học Nam Cần Thơ</h3>
+                                <span class="badge badge-success">Đang học</span>
+                            </div>
+                            <div class="card-meta">
+                                <span><i class="fas fa-calendar"></i> 09/2022 - 09/2026</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Cần Thơ</span>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Chuyên ngành:</strong> Công nghệ thông tin</p>
+                                <p><strong>Xếp loại:</strong> <span class="highlight">Giỏi</span></p>
+                                <p class="card-description">
+                                    Tích lũy kiến thức nền tảng về lập trình, phát triển web, 
+                                    cơ sở dữ liệu và các công nghệ hiện đại.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-animate="fade-in">
+                    <div class="timeline-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="card-header">
+                                <h3>Trường THPT Nguyễn Du</h3>
+                                <span class="badge badge-primary">Hoàn thành</span>
+                            </div>
+                            <div class="card-meta">
+                                <span><i class="fas fa-calendar"></i> 2019 - 2022</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Đồng Tháp</span>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Xếp loại tốt nghiệp:</strong> <span class="highlight">Giỏi</span></p>
+                                <p class="card-description">
+                                    Hoàn thành chương trình trung học phổ thông với thành tích xuất sắc, 
+                                    tạo nền tảng vững chắc cho việc học đại học.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         SKILLS SECTION
+    =========================== -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kỹ năng</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="skills-content">
+                <!-- Technical Skills -->
+                <div class="skills-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-code"></i> Kỹ năng chuyên môn
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-animate="slide-in">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML5 & CSS3</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-animate="slide-in">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-animate="slide-in">
+                            <div class="skill-header">
+                                <span class="skill-name">Adobe Illustrator</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-animate="slide-in">
+                            <div class="skill-header">
+                                <span class="skill-name">Object-Oriented Programming</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-animate="slide-in">
+                            <div class="skill-header">
+                                <span class="skill-name">Laravel</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item" data-animate="slide-in">
+                            <div class="skill-header">
+                                <span class="skill-name">Analyst User Needs</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="skills-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-users"></i> Kỹ năng mềm
+                    </h3>
+                    <div class="soft-skills-grid">
+                        <div class="soft-skill-item" data-animate="fade-in">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <p>Kỹ năng giao tiếp</p>
+                        </div>
+                        
+                        <div class="soft-skill-item" data-animate="fade-in">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <p>Giải quyết vấn đề</p>
+                        </div>
+                        
+                        <div class="soft-skill-item" data-animate="fade-in">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-ear-listen"></i>
+                            </div>
+                            <p>Kỹ năng lắng nghe</p>
+                        </div>
+                        
+                        <div class="soft-skill-item" data-animate="fade-in">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <p>Kỹ năng quan sát</p>
+                        </div>
+                        
+                        <div class="soft-skill-item" data-animate="fade-in">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-people-group"></i>
+                            </div>
+                            <p>Teamwork</p>
+                        </div>
+                        
+                        <div class="soft-skill-item" data-animate="fade-in">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <p>Quản lý thời gian</p>
+                        </div>
+                        
+                        <div class="soft-skill-item" data-animate="fade-in">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <p>Lập kế hoạch</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificates -->
+                <div class="skills-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-certificate"></i> Chứng chỉ
+                    </h3>
+                    <div class="certificates-grid">
+                        <div class="certificate-item" data-animate="fade-in">
+                            <div class="certificate-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4>Chứng chỉ Lập trình viên quốc tế</h4>
+                        </div>
+                        
+                        <div class="certificate-item" data-animate="fade-in">
+                            <div class="certificate-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Hoàn thành khóa học Web Front-End</h4>
+                        </div>
+                        
+                        <div class="certificate-item" data-animate="fade-in">
+                            <div class="certificate-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h4>Chứng chỉ Tin học</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         PROJECTS SECTION
+    =========================== -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Dự án</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card" data-animate="fade-in">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View project">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h3 class="project-title">Web Bán Điện Thoại</h3>
+                        
+                        <div class="project-meta">
+                            <span><i class="fas fa-calendar"></i> 09/09/2024 - 29/10/2024</span>
+                            <span><i class="fas fa-users"></i> 4 thành viên</span>
+                        </div>
+                        
+                        <p class="project-description">
+                            Dự án phát triển website thương mại điện tử bán điện thoại. 
+                            Đảm nhận vai trò Front-end Developer, thiết kế giao diện người dùng 
+                            thân thiện và responsive.
+                        </p>
+                        
+                        <div class="project-role">
+                            <strong>Vai trò:</strong> Front-end Developer
+                        </div>
+                        
+                        <div class="project-supervisor">
+                            <strong>Giảng viên hướng dẫn:</strong> Cao Hồng Nga
+                        </div>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-html5"></i> HTML/CSS</span>
+                            <span class="tech-tag"><i class="fas fa-palette"></i> Adobe Illustrator</span>
+                            <span class="tech-tag"><i class="fas fa-database"></i> SQL Server</span>
+                            <span class="tech-tag"><i class="fas fa-code"></i> Visual Studio</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Placeholder for future projects -->
+                <div class="project-card project-placeholder" data-animate="fade-in">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h3 class="project-title">Dự án tiếp theo</h3>
+                        <p class="project-description">
+                            Đang phát triển thêm các dự án mới để nâng cao kỹ năng và kinh nghiệm...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         CONTACT SECTION
+    =========================== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Liên hệ</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Hãy liên hệ với tôi nếu bạn có bất kỳ câu hỏi nào hoặc muốn hợp tác!
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card" data-animate="fade-in">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <a href="mailto:tainguyen280404@gmail.com">tainguyen280404@gmail.com</a>
+                    </div>
+                    
+                    <div class="info-card" data-animate="fade-in">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Điện thoại</h3>
+                        <a href="tel:038937115">038937115</a>
+                    </div>
+                    
+                    <div class="info-card" data-animate="fade-in">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Địa chỉ</h3>
+                        <p>Huyện Lai Vung, tỉnh Đồng Tháp</p>
+                    </div>
+                    
+                    <div class="info-card info-card-highlight" data-animate="fade-in">
+                        <div class="info-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Tài liệu</h3>
+                        <div class="document-links">
+                            <a href="https://www.topcv.vn/xem-cv/UwwBDQgAUwZTA1lUAlBWVQNSAlBSXldTDlBeWwcd97" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="doc-link">
+                                <i class="fas fa-download"></i> Tải CV
+                            </a>
+                            <a href="https://docs.google.com/document/d/1Uwqw2OqjJMaSjzvC_hB99ofk6HsjHLpG7jMyYXhxRxc/edit?usp=sharing" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="doc-link">
+                                <i class="fas fa-file-contract"></i> Đơn xin thực tập
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Họ và tên <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Nhập họ tên của bạn">
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="email@example.com">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tin nhắn <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Nội dung tin nhắn..."></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+                        </button>
+                        
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Reference Contact -->
+            <div class="reference-section">
+                <h3 class="reference-title">Người tham chiếu</h3>
+                <div class="reference-card">
+                    <div class="reference-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="reference-info">
+                        <h4>Thạc sĩ Mai Quang Thuận</h4>
+                        <p><i class="fas fa-envelope"></i> quangthuandl30@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 0907 760 196</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         FOOTER
+    =========================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Nguyễn Thành Tài</h3>
+                    <p>Front-end Developer</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#hero">Trang chủ</a>
+                    <a href="#about">Giới thiệu</a>
+                    <a href="#skills">Kỹ năng</a>
+                    <a href="#projects">Dự án</a>
+                    <a href="#contact">Liên hệ</a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="mailto:tainguyen280404@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:038937115" aria-label="Phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                    <a href="https://www.topcv.vn/xem-cv/UwwBDQgAUwZTA1lUAlBWVQNSAlBSXldTDlBeWwcd97" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       aria-label="CV">
+                        <i class="fas fa-file-alt"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nguyễn Thành Tài. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+</body>
+</html>
