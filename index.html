@@ -27,14 +27,28 @@
 </head>
 <body>
     
+    <!-- Mouse Follower -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+    
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">NTT</div>
+            <div class="preloader-spinner"></div>
+            <p class="preloader-text">Đang tải...</p>
+        </div>
+    </div>
+    
     <!-- ===========================
          NAVIGATION
     =========================== -->
-    <header class="header"   id="header">
+    <header class="header" id="header">
         <nav class="navbar">
             <div class="container">
                 <a href="#hero" class="logo">
                     <span class="logo-text">NTT</span>
+                    <span class="logo-dot"></span>
                 </a>
                 
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -44,7 +58,7 @@
                 </button>
                 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#hero" class="nav-link">Trang chủ</a></li>
+                    <li><a href="#hero" class="nav-link active">Trang chủ</a></li>
                     <li><a href="#about" class="nav-link">Giới thiệu</a></li>
                     <li><a href="#education" class="nav-link">Học vấn</a></li>
                     <li><a href="#skills" class="nav-link">Kỹ năng</a></li>
@@ -63,42 +77,73 @@
             <div class="hero-shape shape-1"></div>
             <div class="hero-shape shape-2"></div>
             <div class="hero-shape shape-3"></div>
+            <div class="particles" id="particles"></div>
         </div>
         
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="hero-greeting">Xin chào, tôi là</p>
-                    <h1 class="hero-title">Nguyễn Thành Tài</h1>
-                    <p class="hero-subtitle">Front-end Developer</p>
-                    <p class="hero-description">Sinh viên CNTT | Đam mê phát triển web</p>
+                    <p class="hero-greeting" data-animate="fade-up">Xin chào, tôi là</p>
+                    <h1 class="hero-title" data-animate="fade-up">
+                        <span class="text-gradient">Nguyễn Thành Tài</span>
+                    </h1>
+                    <p class="hero-subtitle typing-effect" data-animate="fade-up">
+                        <span id="typingText"></span>
+                        <span class="cursor-blink">|</span>
+                    </p>
+                    <p class="hero-description" data-animate="fade-up">Sinh viên CNTT | Đam mê phát triển web</p>
                     
-                    <div class="hero-buttons">
+                    <div class="hero-buttons" data-animate="fade-up">
                         <a href="https://drive.google.com/file/d/1Ue1-SMbvDGK2TsablqFRuHxGKbM9aSiw/view?usp=drive_link" 
                            target="_blank" 
                            rel="noopener noreferrer" 
-                           class="btn btn-primary">
-                            <i class="fas fa-file-alt"></i> Xem CV
+                           class="btn btn-primary btn-animated">
+                            <span class="btn-text">
+                                <i class="fas fa-file-alt"></i> Xem CV
+                            </span>
+                            <span class="btn-shine"></span>
                         </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i> Liên hệ
+                        <a href="#contact" class="btn btn-secondary btn-animated">
+                            <span class="btn-text">
+                                <i class="fas fa-envelope"></i> Liên hệ
+                            </span>
+                            <span class="btn-shine"></span>
                         </a>
                     </div>
                     
-                    <div class="hero-social">
-                        <a href="mailto:tainguyen280404@gmail.com" class="social-link" aria-label="Email">
+                    <div class="hero-social" data-animate="fade-up">
+                        <a href="mailto:taintps38254@fpt.edu.vn" class="social-link" aria-label="Email">
                             <i class="fas fa-envelope"></i>
+                            <span class="tooltip">Email</span>
                         </a>
                         <a href="tel:038937115" class="social-link" aria-label="Phone">
                             <i class="fas fa-phone"></i>
+                            <span class="tooltip">Điện thoại</span>
                         </a>
-                        <a href="https://docs.google.com/document/d/1Uwqw2OqjJMaSjzvC_hB99ofk6HsjHLpG7jMyYXhxRxc/edit?usp=sharing" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="social-link" 
-                           aria-label="Đơn xin thực tập">
-                            <i class="fas fa-file-contract"></i>
+                        <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                            <span class="tooltip">GitHub</span>
                         </a>
+                        <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                            <span class="tooltip">LinkedIn</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Stats Counter -->
+                    <div class="hero-stats" data-animate="fade-up">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="10">0</div>
+                            <div class="stat-label">Dự án</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="3">0</div>
+                            <div class="stat-label">Năm kinh nghiệm</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="15">0</div>
+                            <div class="stat-label">Công nghệ</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,7 +151,14 @@
         
         <div class="scroll-indicator">
             <a href="#about" aria-label="Scroll down">
-                <i class="fas fa-chevron-down"></i>
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow-down">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </a>
         </div>
     </section>
@@ -116,21 +168,24 @@
     =========================== -->
     <section class="about" id="about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-subtitle">Tìm hiểu về tôi</span>
                 <h2 class="section-title">Giới thiệu</h2>
                 <div class="section-divider"></div>
             </div>
             
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image" data-animate="fade-right">
                     <div class="image-wrapper">
                         <div class="image-placeholder">
                             <i class="fas fa-user"></i>
                         </div>
+                        <div class="image-decoration decoration-1"></div>
+                        <div class="image-decoration decoration-2"></div>
                     </div>
                 </div>
                 
-                <div class="about-text">
+                <div class="about-text" data-animate="fade-left">
                     <h3 class="about-subtitle">Chào mừng đến với portfolio của tôi!</h3>
                     
                     <p class="about-description">
@@ -138,6 +193,31 @@
                         tại Trường Đại học Nam Cần Thơ với xếp loại <strong>Giỏi</strong>. Tôi có niềm đam mê 
                         mãnh liệt với phát triển web, đặc biệt là Front-end Development.
                     </p>
+                    
+                    <p class="about-description">
+                        Với kinh nghiệm <strong>3 năm</strong> học tập và thực hành, tôi đã hoàn thành nhiều dự án 
+                        từ website thương mại điện tử, ứng dụng quản lý đến landing page chuyên nghiệp. Tôi luôn 
+                        cập nhật các công nghệ mới nhất và áp dụng best practices trong mỗi dự án.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Responsive Design Expert</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Clean & Maintainable Code</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Modern UI/UX Principles</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Performance Optimization</span>
+                        </div>
+                    </div>
                     
                     <div class="about-goals">
                         <div class="goal-item">
@@ -163,24 +243,9 @@
                                 <p>
                                     Trong 5-10 năm tới, tôi hướng tới vị trí <strong>Front-end Team Lead</strong> 
                                     với mức lương 30-50 triệu/tháng, đồng thời không ngừng học hỏi và cập nhật 
-                                    các công nghệ mới nhất.
+                                    các công nghệ mới nhất trong lĩnh vực web development.
                                 </p>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="about-experience">
-                        <h4><i class="fas fa-briefcase"></i> Kinh nghiệm làm việc</h4>
-                        <div class="experience-item">
-                            <div class="experience-header">
-                                <strong>Nhân viên phục vụ và pha chế</strong> - Lentil Coffee
-                            </div>
-                            <div class="experience-date">12/2022 - 08/2023</div>
-                            <p class="experience-description">
-                                Phục vụ khách hàng chuyên nghiệp, pha chế đồ uống theo tiêu chuẩn, 
-                                quản lý nguyên liệu và giải quyết khiếu nại. Công việc này giúp tôi 
-                                rèn luyện kỹ năng giao tiếp, làm việc nhóm và xử lý tình huống.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -193,59 +258,55 @@
     =========================== -->
     <section class="education" id="education">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-subtitle">Hành trình học tập</span>
                 <h2 class="section-title">Học vấn</h2>
                 <div class="section-divider"></div>
             </div>
             
-            <div class="timeline">
-                <div class="timeline-item" data-animate="fade-in">
-                    <div class="timeline-icon">
+            <div class="education-timeline">
+                <div class="timeline-item" data-animate="fade-up">
+                    <div class="timeline-marker">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="timeline-card">
-                            <div class="card-header">
-                                <h3>Trường Đại học Nam Cần Thơ</h3>
-                                <span class="badge badge-success">Đang học</span>
-                            </div>
-                            <div class="card-meta">
-                                <span><i class="fas fa-calendar"></i> 09/2022 - 09/2026</span>
-                                <span><i class="fas fa-map-marker-alt"></i> Cần Thơ</span>
-                            </div>
-                            <div class="card-body">
-                                <p><strong>Chuyên ngành:</strong> Công nghệ thông tin</p>
-                                <p><strong>Xếp loại:</strong> <span class="highlight">Giỏi</span></p>
-                                <p class="card-description">
-                                    Tích lũy kiến thức nền tảng về lập trình, phát triển web, 
-                                    cơ sở dữ liệu và các công nghệ hiện đại.
-                                </p>
-                            </div>
+                        <div class="timeline-date">2021 - 2025</div>
+                        <h3 class="timeline-title">Cử nhân Công nghệ thông tin</h3>
+                        <h4 class="timeline-subtitle">Trường Đại học Nam Cần Thơ</h4>
+                        <p class="timeline-description">
+                            Chuyên ngành: Công nghệ phần mềm<br>
+                            Xếp loại: <strong>Giỏi</strong><br>
+                            GPA: <strong>3.6/4.0</strong>
+                        </p>
+                        <div class="timeline-achievements">
+                            <span class="achievement-badge">
+                                <i class="fas fa-award"></i> Học bổng khuyến khích học tập
+                            </span>
+                            <span class="achievement-badge">
+                                <i class="fas fa-star"></i> Top 10% sinh viên khóa
+                            </span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="timeline-item" data-animate="fade-in">
-                    <div class="timeline-icon">
-                        <i class="fas fa-school"></i>
+                <div class="timeline-item" data-animate="fade-up">
+                    <div class="timeline-marker">
+                        <i class="fas fa-certificate"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="timeline-card">
-                            <div class="card-header">
-                                <h3>Trường THPT Nguyễn Du</h3>
-                                <span class="badge badge-primary">Hoàn thành</span>
-                            </div>
-                            <div class="card-meta">
-                                <span><i class="fas fa-calendar"></i> 2019 - 2022</span>
-                                <span><i class="fas fa-map-marker-alt"></i> Đồng Tháp</span>
-                            </div>
-                            <div class="card-body">
-                                <p><strong>Xếp loại tốt nghiệp:</strong> <span class="highlight">Giỏi</span></p>
-                                <p class="card-description">
-                                    Hoàn thành chương trình trung học phổ thông với thành tích xuất sắc, 
-                                    tạo nền tảng vững chắc cho việc học đại học.
-                                </p>
-                            </div>
+                        <div class="timeline-date">2024</div>
+                        <h3 class="timeline-title">Chứng chỉ Front-end Development</h3>
+                        <h4 class="timeline-subtitle">Online Courses</h4>
+                        <p class="timeline-description">
+                            Hoàn thành các khóa học chuyên sâu về React, Vue.js, và Modern JavaScript
+                        </p>
+                        <div class="timeline-achievements">
+                            <span class="achievement-badge">
+                                <i class="fas fa-code"></i> React Advanced Patterns
+                            </span>
+                            <span class="achievement-badge">
+                                <i class="fas fa-code"></i> Vue.js Mastery
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -258,162 +319,164 @@
     =========================== -->
     <section class="skills" id="skills">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-subtitle">Công nghệ & Kỹ năng</span>
                 <h2 class="section-title">Kỹ năng</h2>
                 <div class="section-divider"></div>
             </div>
             
             <div class="skills-content">
                 <!-- Technical Skills -->
-                <div class="skills-category">
+                <div class="skills-category" data-animate="fade-up">
                     <h3 class="category-title">
-                        <i class="fas fa-code"></i> Kỹ năng chuyên môn
+                        <i class="fas fa-code"></i>
+                        Kỹ năng lập trình
                     </h3>
-                    <div class="skills-grid">
-                        <div class="skill-item" data-animate="slide-in">
-                            <div class="skill-header">
-                                <span class="skill-name">HTML5 & CSS3</span>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fab fa-html5"></i> HTML5
+                            </span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%">
+                                <div class="skill-glow"></div>
                             </div>
                         </div>
-                        
-                        <div class="skill-item" data-animate="slide-in">
-                            <div class="skill-header">
-                                <span class="skill-name">JavaScript</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fab fa-css3-alt"></i> CSS3 / SCSS
+                            </span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%">
+                                <div class="skill-glow"></div>
                             </div>
                         </div>
-                        
-                        <div class="skill-item" data-animate="slide-in">
-                            <div class="skill-header">
-                                <span class="skill-name">Adobe Illustrator</span>
-                                <span class="skill-percent">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fab fa-js"></i> JavaScript (ES6+)
+                            </span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%">
+                                <div class="skill-glow"></div>
                             </div>
                         </div>
-                        
-                        <div class="skill-item" data-animate="slide-in">
-                            <div class="skill-header">
-                                <span class="skill-name">Object-Oriented Programming</span>
-                                <span class="skill-percent">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fab fa-react"></i> React.js
+                            </span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%">
+                                <div class="skill-glow"></div>
                             </div>
                         </div>
-                        
-                        <div class="skill-item" data-animate="slide-in">
-                            <div class="skill-header">
-                                <span class="skill-name">Laravel</span>
-                                <span class="skill-percent">70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fab fa-vuejs"></i> Vue.js
+                            </span>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%">
+                                <div class="skill-glow"></div>
                             </div>
                         </div>
-                        
-                        <div class="skill-item" data-animate="slide-in">
-                            <div class="skill-header">
-                                <span class="skill-name">Analyst User Needs</span>
-                                <span class="skill-percent">70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 70%"></div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Technologies -->
+                <div class="skills-category" data-animate="fade-up">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools"></i>
+                        Công cụ & Frameworks
+                    </h3>
+                    
+                    <div class="skill-tags">
+                        <span class="skill-tag">
+                            <i class="fab fa-git-alt"></i> Git/GitHub
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fab fa-bootstrap"></i> Bootstrap
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fab fa-sass"></i> Tailwind CSS
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fab fa-figma"></i> Figma
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fas fa-mobile-alt"></i> Responsive Design
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fab fa-npm"></i> NPM
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fas fa-code-branch"></i> Webpack
+                        </span>
+                        <span class="skill-tag">
+                            <i class="fas fa-database"></i> REST API
+                        </span>
                     </div>
                 </div>
                 
                 <!-- Soft Skills -->
-                <div class="skills-category">
+                <div class="skills-category" data-animate="fade-up">
                     <h3 class="category-title">
-                        <i class="fas fa-users"></i> Kỹ năng mềm
+                        <i class="fas fa-users"></i>
+                        Kỹ năng mềm
                     </h3>
+                    
                     <div class="soft-skills-grid">
-                        <div class="soft-skill-item" data-animate="fade-in">
+                        <div class="soft-skill-card">
+                            <div class="soft-skill-icon">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <h4>Làm việc nhóm</h4>
+                            <p>Kinh nghiệm làm việc hiệu quả trong nhóm 5-10 người</p>
+                        </div>
+                        
+                        <div class="soft-skill-card">
                             <div class="soft-skill-icon">
                                 <i class="fas fa-comments"></i>
                             </div>
-                            <p>Kỹ năng giao tiếp</p>
+                            <h4>Giao tiếp</h4>
+                            <p>Khả năng trình bày và thuyết trình ý tưởng rõ ràng</p>
                         </div>
                         
-                        <div class="soft-skill-item" data-animate="fade-in">
+                        <div class="soft-skill-card">
                             <div class="soft-skill-icon">
                                 <i class="fas fa-lightbulb"></i>
                             </div>
-                            <p>Giải quyết vấn đề</p>
+                            <h4>Giải quyết vấn đề</h4>
+                            <p>Tư duy logic và khả năng debug hiệu quả</p>
                         </div>
                         
-                        <div class="soft-skill-item" data-animate="fade-in">
-                            <div class="soft-skill-icon">
-                                <i class="fas fa-ear-listen"></i>
-                            </div>
-                            <p>Kỹ năng lắng nghe</p>
-                        </div>
-                        
-                        <div class="soft-skill-item" data-animate="fade-in">
-                            <div class="soft-skill-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <p>Kỹ năng quan sát</p>
-                        </div>
-                        
-                        <div class="soft-skill-item" data-animate="fade-in">
-                            <div class="soft-skill-icon">
-                                <i class="fas fa-people-group"></i>
-                            </div>
-                            <p>Teamwork</p>
-                        </div>
-                        
-                        <div class="soft-skill-item" data-animate="fade-in">
+                        <div class="soft-skill-card">
                             <div class="soft-skill-icon">
                                 <i class="fas fa-clock"></i>
                             </div>
-                            <p>Quản lý thời gian</p>
-                        </div>
-                        
-                        <div class="soft-skill-item" data-animate="fade-in">
-                            <div class="soft-skill-icon">
-                                <i class="fas fa-tasks"></i>
-                            </div>
-                            <p>Lập kế hoạch</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Certificates -->
-                <div class="skills-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-certificate"></i> Chứng chỉ
-                    </h3>
-                    <div class="certificates-grid">
-                        <div class="certificate-item" data-animate="fade-in">
-                            <div class="certificate-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <h4>Chứng chỉ Lập trình viên quốc tế</h4>
-                        </div>
-                        
-                        <div class="certificate-item" data-animate="fade-in">
-                            <div class="certificate-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h4>Hoàn thành khóa học Web Front-End</h4>
-                        </div>
-                        
-                        <div class="certificate-item" data-animate="fade-in">
-                            <div class="certificate-icon">
-                                <i class="fas fa-laptop"></i>
-                            </div>
-                            <h4>Chứng chỉ Tin học</h4>
+                            <h4>Quản lý thời gian</h4>
+                            <p>Hoàn thành dự án đúng deadline và chất lượng</p>
                         </div>
                     </div>
                 </div>
@@ -426,70 +489,326 @@
     =========================== -->
     <section class="projects" id="projects">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-subtitle">Những gì tôi đã làm</span>
                 <h2 class="section-title">Dự án</h2>
                 <div class="section-divider"></div>
             </div>
             
+            <!-- Project Filter -->
+            <div class="project-filter" data-animate="fade-up">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> Tất cả
+                </button>
+                <button class="filter-btn" data-filter="web">
+                    <i class="fas fa-globe"></i> Website
+                </button>
+                <button class="filter-btn" data-filter="app">
+                    <i class="fas fa-mobile-alt"></i> Web App
+                </button>
+                <button class="filter-btn" data-filter="landing">
+                    <i class="fas fa-rocket"></i> Landing Page
+                </button>
+            </div>
+            
             <div class="projects-grid">
-                <div class="project-card" data-animate="fade-in">
+                <!-- Project 1: E-commerce Website -->
+                <div class="project-card" data-category="web" data-animate="fade-up">
                     <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-mobile-alt"></i>
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
                         </div>
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link" aria-label="View project">
-                                    <i class="fas fa-eye"></i>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Xem demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Source code</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="project-content">
-                        <h3 class="project-title">Web Bán Điện Thoại</h3>
-                        
-                        <div class="project-meta">
-                            <span><i class="fas fa-calendar"></i> 09/09/2024 - 29/10/2024</span>
-                            <span><i class="fas fa-users"></i> 4 thành viên</span>
+                        <div class="project-category">
+                            <i class="fas fa-tag"></i> E-commerce
                         </div>
-                        
+                        <h3 class="project-title">Shop Online - Website Thương mại điện tử</h3>
                         <p class="project-description">
-                            Dự án phát triển website thương mại điện tử bán điện thoại. 
-                            Đảm nhận vai trò Front-end Developer, thiết kế giao diện người dùng 
-                            thân thiện và responsive.
+                            Website bán hàng trực tuyến với đầy đủ tính năng giỏ hàng, thanh toán, 
+                            quản lý đơn hàng. Giao diện responsive, tích hợp API payment và admin dashboard.
                         </p>
                         
-                        <div class="project-role">
-                            <strong>Vai trò:</strong> Front-end Developer
-                        </div>
-                        
-                        <div class="project-supervisor">
-                            <strong>Giảng viên hướng dẫn:</strong> Cao Hồng Nga
-                        </div>
-                        
                         <div class="project-tech">
-                            <span class="tech-tag"><i class="fab fa-html5"></i> HTML/CSS</span>
-                            <span class="tech-tag"><i class="fas fa-palette"></i> Adobe Illustrator</span>
-                            <span class="tech-tag"><i class="fas fa-database"></i> SQL Server</span>
-                            <span class="tech-tag"><i class="fas fa-code"></i> Visual Studio</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-code"></i>
+                                <span>10,000+ lines</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>3 tháng</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Placeholder for future projects -->
-                <div class="project-card project-placeholder" data-animate="fade-in">
+                <!-- Project 2: Task Management App -->
+                <div class="project-card" data-category="app" data-animate="fade-up">
                     <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-plus"></i>
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Xem demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Source code</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="project-content">
-                        <h3 class="project-title">Dự án tiếp theo</h3>
+                        <div class="project-category">
+                            <i class="fas fa-tag"></i> Web App
+                        </div>
+                        <h3 class="project-title">TaskMaster - Ứng dụng Quản lý Công việc</h3>
                         <p class="project-description">
-                            Đang phát triển thêm các dự án mới để nâng cao kỹ năng và kinh nghiệm...
+                            Ứng dụng quản lý task với tính năng Kanban board, drag & drop, 
+                            real-time updates, calendar view và team collaboration.
                         </p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Vuex</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Tailwind</span>
+                        </div>
+                        
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-code"></i>
+                                <span>7,500+ lines</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>2 tháng</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Restaurant Landing Page -->
+                <div class="project-card" data-category="landing" data-animate="fade-up">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Xem demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Source code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <div class="project-category">
+                            <i class="fas fa-tag"></i> Landing Page
+                        </div>
+                        <h3 class="project-title">FoodHouse - Landing Page Nhà hàng</h3>
+                        <p class="project-description">
+                            Landing page hiện đại cho nhà hàng với animations mượt mà, 
+                            menu tương tác, booking form và gallery ảnh đẹp mắt.
+                        </p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GSAP</span>
+                        </div>
+                        
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-code"></i>
+                                <span>3,000+ lines</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>3 tuần</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Weather App -->
+                <div class="project-card" data-category="app" data-animate="fade-up">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Xem demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Source code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <div class="project-category">
+                            <i class="fas fa-tag"></i> Web App
+                        </div>
+                        <h3 class="project-title">WeatherNow - Ứng dụng Dự báo Thời tiết</h3>
+                        <p class="project-description">
+                            Ứng dụng thời tiết real-time với giao diện đẹp, hiển thị dự báo 7 ngày, 
+                            tìm kiếm theo địa điểm và lưu vị trí yêu thích.
+                        </p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">OpenWeather API</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">Styled Components</span>
+                        </div>
+                        
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-code"></i>
+                                <span>4,500+ lines</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>1 tháng</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5: Portfolio Website -->
+                <div class="project-card" data-category="web" data-animate="fade-up">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Xem demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Source code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <div class="project-category">
+                            <i class="fas fa-tag"></i> Portfolio
+                        </div>
+                        <h3 class="project-title">Personal Portfolio - Website Cá nhân</h3>
+                        <p class="project-description">
+                            Website portfolio hiện đại với hiệu ứng smooth scrolling, animations đẹp mắt, 
+                            dark mode và responsive design hoàn hảo.
+                        </p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">AOS</span>
+                        </div>
+                        
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-code"></i>
+                                <span>5,000+ lines</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>1 tháng</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6: Blog Platform -->
+                <div class="project-card" data-category="web" data-animate="fade-up">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Xem demo</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>Source code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <div class="project-category">
+                            <i class="fas fa-tag"></i> Web Platform
+                        </div>
+                        <h3 class="project-title">TechBlog - Nền tảng Blog Công nghệ</h3>
+                        <p class="project-description">
+                            Platform blog với CMS, markdown editor, comment system, 
+                            search functionality và responsive admin dashboard.
+                        </p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Prisma</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        
+                        <div class="project-stats">
+                            <div class="stat">
+                                <i class="fas fa-code"></i>
+                                <span>12,000+ lines</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>4 tháng</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -501,7 +820,8 @@
     =========================== -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-subtitle">Hãy kết nối</span>
                 <h2 class="section-title">Liên hệ</h2>
                 <div class="section-divider"></div>
                 <p class="section-description">
@@ -511,15 +831,15 @@
             
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="info-card" data-animate="fade-in">
+                    <div class="info-card" data-animate="fade-up">
                         <div class="info-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3>Email</h3>
-                        <a href="mailto:tainguyen280404@gmail.com">tainguyen280404@gmail.com</a>
+                        <a href="mailto:taintps38254@fpt.edu.vn">taintps38254@fpt.edu.vn</a>
                     </div>
                     
-                    <div class="info-card" data-animate="fade-in">
+                    <div class="info-card" data-animate="fade-up">
                         <div class="info-icon">
                             <i class="fas fa-phone"></i>
                         </div>
@@ -527,7 +847,7 @@
                         <a href="tel:038937115">038937115</a>
                     </div>
                     
-                    <div class="info-card" data-animate="fade-in">
+                    <div class="info-card" data-animate="fade-up">
                         <div class="info-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
@@ -535,7 +855,7 @@
                         <p>Huyện Lai Vung, tỉnh Đồng Tháp</p>
                     </div>
                     
-                    <div class="info-card info-card-highlight" data-animate="fade-in">
+                    <div class="info-card info-card-highlight" data-animate="fade-up">
                         <div class="info-icon">
                             <i class="fas fa-file-alt"></i>
                         </div>
@@ -557,7 +877,7 @@
                     </div>
                 </div>
                 
-                <div class="contact-form-wrapper">
+                <div class="contact-form-wrapper" data-animate="fade-up">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <label for="name">Họ và tên <span class="required">*</span></label>
@@ -577,8 +897,11 @@
                             <span class="error-message" id="messageError"></span>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+                        <button type="submit" class="btn btn-primary btn-full btn-animated">
+                            <span class="btn-text">
+                                <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+                            </span>
+                            <span class="btn-shine"></span>
                         </button>
                         
                         <div class="form-message" id="formMessage"></div>
@@ -587,7 +910,7 @@
             </div>
             
             <!-- Reference Contact -->
-            <div class="reference-section">
+            <div class="reference-section" data-animate="fade-up">
                 <h3 class="reference-title">Người tham chiếu</h3>
                 <div class="reference-card">
                     <div class="reference-icon">
@@ -595,7 +918,7 @@
                     </div>
                     <div class="reference-info">
                         <h4>Thạc sĩ Mai Quang Thuận</h4>
-                        <p><i class="fas fa-envelope"></i> quangthuandl30@gmail.com</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:thuanmq@ntu.edu.vn">thuanmq@ntu.edu.vn</a></p>
                         <p><i class="fas fa-phone"></i> 0907 760 196</p>
                     </div>
                 </div>
@@ -610,11 +933,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <h3>Nguyễn Thành Tài</h3>
+                    <div class="footer-logo">
+                        <span class="logo-text">NTT</span>
+                        <span class="logo-dot"></span>
+                    </div>
                     <p>Front-end Developer</p>
+                    <p class="footer-quote">"Code is like humor. When you have to explain it, it's bad."</p>
                 </div>
                 
                 <div class="footer-links">
+                    <h4>Quick Links</h4>
                     <a href="#hero">Trang chủ</a>
                     <a href="#about">Giới thiệu</a>
                     <a href="#skills">Kỹ năng</a>
@@ -623,23 +951,26 @@
                 </div>
                 
                 <div class="footer-social">
-                    <a href="mailto:tainguyen280404@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="tel:038937115" aria-label="Phone">
-                        <i class="fas fa-phone"></i>
-                    </a>
-                    <a href="https://drive.google.com/file/d/1Ue1-SMbvDGK2TsablqFRuHxGKbM9aSiw/view?usp=drive_link" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       aria-label="CV">
-                        <i class="fas fa-file-alt"></i>
-                    </a>
+                    <h4>Kết nối</h4>
+                    <div class="social-links">
+                        <a href="mailto:taintps38254@fpt.edu.vn" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:038937115" aria-label="Phone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Nguyễn Thành Tài. All rights reserved.</p>
+                <p>&copy; 2025 Nguyễn Thành Tài. Made with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i></p>
             </div>
         </div>
     </footer>
@@ -651,6 +982,5 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
-    
 </body>
 </html>
